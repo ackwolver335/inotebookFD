@@ -6,9 +6,7 @@ function App() {
 
   return (
     <>
-      <div className="navbar">
-        This is a simple text with js.
-      </div>
+      
     </>
   )
 }
