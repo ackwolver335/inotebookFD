@@ -1,12 +1,15 @@
 import './App.css'
+import { BrowserRouter,Routes,Route } from 'react-router-dom'
+import Home from './components/Home'
+import Navbar from './components/Navbar'
 
 function App() {
 
   return (
     <>
-      <div className="App">
-        <h1 className = "lg:text-2xl font-semibold font-sans m-2"> This is my react app here. </h1>
-      </div>
+      {/* Adding a Navbar Here */}
+      <Navbar  />
+      <Home />
     </>
   )
 }
