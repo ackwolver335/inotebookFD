@@ -1,27 +1,22 @@
 import React from 'react'
 import '../App.css'
 import { NavLink } from 'react-router-dom'
+import Logo from '../assets/Logo.png'
 
 export default function Navbar() {
 
-  // defining a method for creating it look good
-  const toggleMenu = () => {
-    document.querySelector('.menuList').classList.toggle('xsz:hidden');
-  }
-
   return (
-    <nav className="flex font-poppins">
+    <nav className="flex bg-gradient-to-l from-secondary to-gray-600 drop-shadow-lg w-full fixed">
 
-      {/* Adding a navbar menu button which will be visible for menu at small width */}
-      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-menu-button-wide xsz:my-2 xsz:mx-3 xsz:p-0 xsz:w-6 sm:hidden" viewBox="0 0 16 16" onClick={toggleMenu}>
-        <path d="M0 1.5A1.5 1.5 0 0 1 1.5 0h13A1.5 1.5 0 0 1 16 1.5v2A1.5 1.5 0 0 1 14.5 5h-13A1.5 1.5 0 0 1 0 3.5zM1.5 1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5z" />
-        <path d="M2 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m10.823.323-.396-.396A.25.25 0 0 1 12.604 2h.792a.25.25 0 0 1 .177.427l-.396.396a.25.25 0 0 1-.354 0M0 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm1 3v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2zm14-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2zM2 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5" />
-      </svg>
+      {/* Setting the image of the main logo */}
+      <img src={Logo} alt="Main Image Logo Here" className = "xsz:w-28"/>
 
-      <ul className="menuList flex xsz:flex-col xsz:absolute xsz:top-10 xsz:left-3 xsz:bg-secondary xsz:text-white xsz:p-2 xsz:rounded-md sm:relative xsz:hidden sm:flex sm:flex-row xsz:space-x-0 sm:space-x-2 text-secondary">
+      {/* Creating a list for the navbar */}
+      <ul className = "flex lg:space-x-2 xl:text-[16px]">
         <NavLink to = "/"> Home </NavLink>
         <NavLink to = "/about"> About </NavLink>
       </ul>
+
     </nav>
   )
 }
