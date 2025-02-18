@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../App.css'
 import { NavLink } from 'react-router-dom'
 import Logo from '../assets/Logo.png'
+import { useLocation } from 'react-router-dom'
 
 export default function Navbar() {
+
+  // using the uselocation hook in order to change the state of navbar elements to be active when needed
+  let location = useLocation();
+
+  // using useEffect hook in order to check the location here
+  useEffect(() => {
+  },[location])
 
   // defining a method for toggling the menu bar here
   const showMenu = () => {
@@ -11,18 +19,20 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="flex justify-between fixed w-full items-center xsz:px-4 xsz:py-2 xl:px-8 xl:py-2 bg-secondary/80 drop-shadow-lg rounded-b-xl">
+    <nav className="flex justify-between fixed w-full items-center xsz:px-4 xsz:py-2 xl:px-8 xl:py-2 bg-secondary/70 drop-shadow-lg rounded-b-xl">
       {/* Setting the image of the main logo */}
       <NavLink to="/">
-        <img src={Logo} alt="Main Image Logo Here" className="xsz:w-20 sm:w-24 xl:w-[100px]" />
+        <img src={Logo} alt="Main Image Logo Here" className="xsz:w-20 sm:w-24 xl:w-[110px] 2xl:w-[120px]" />
       </NavLink>
 
       {/* Creating a list for the navbar */}
       <ul className="menuList flex sm:space-x-3 lg:space-x-5 sm:text-[16px] md:text-[17px] lg:text-[18px] font-poppins 
         xl:font-medium text-white xsz:flex-col xsz:absolute sm:relative sm:flex-row xsz:top-16 sm:top-0 xsz:bg-secondary/70 sm:bg-transparent 
         xsz:p-3 xsz:space-y-2 xsz:rounded-md xsz:right-2 xsz:translate-x-20 sm:translate-x-0 ease-in duration-200">
-        <NavLink to="/" className="active:text-primary sm:hover:underline sm:hover:underline-offset-4"> Home </NavLink>
-        <NavLink to="/about" className="active:text-primary sm:hover:underline sm:hover:underline-offset-4"> About </NavLink>
+
+        {/* The main navlinks are here */}
+        <NavLink to="/" className={`active:text-primary sm:hover:underline sm:hover:underline-offset-4 ${location.pathname === "/" ? "text-primary" : ""}`}> Home </NavLink>
+        <NavLink to="/about" className={`active:text-primary sm:hover:underline sm:hover:underline-offset-4 ${location.pathname === "/about" ? "text-primary" : ""}`}> About </NavLink>
       </ul>
 
       {/* Adding a Bootstrap Icon here for menu */}
