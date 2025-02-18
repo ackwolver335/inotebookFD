@@ -4,6 +4,7 @@ import Home from './components/Home'
 import Navbar from './components/Navbar'
 import About from './components/About'
 import NoteState from './context/notes/NoteState'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -18,6 +19,9 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
         </Routes>
+
+        {/* Adding page footer here regarding bottom links */}
+        <Footer />
       </NoteState>
     </>
   )
