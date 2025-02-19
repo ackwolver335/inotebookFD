@@ -15,7 +15,14 @@ export default function Navbar() {
 
   // defining a method for toggling the menu bar here
   const showMenu = () => {
-    document.querySelector('.menuList').classList.toggle('xsz:translate-x-20')
+
+    // the default toggle
+    document.querySelector('.menuList').classList.toggle('xsz:translate-x-20');
+
+    // if user don't interact for 4 seconds it will automatically disappers
+    setTimeout(() => {
+      document.querySelector('.menuList').classList.add('xsz:translate-x-20');
+    },4000);
   }
 
   return (
