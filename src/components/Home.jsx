@@ -1,9 +1,10 @@
 import React from 'react'
+import FirstComp from './FirstComp'
 
 export default function Home() {
   return (
-    <div className = "lg:pt-24 lg:px-4">
-      <h1> This is our Home </h1>
+    <div className = "xsz:pt-18 lg:pt-24">
+      <FirstComp />
     </div>
   )
 }
