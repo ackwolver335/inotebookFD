@@ -3,7 +3,7 @@ import SideImage from '../assets/SideImage.png';
 
 export default function FirstComp() {
   return (
-    <div className = "flex sm:flex-row sm:justify-evenly md:justify-around lg:justify-between xl:justify-around items-center xsz:mx-3 xsz:my-2 xsz:rounded-md xsz:py-3 xsz:px-4 xsz:shadow-lg xsz:bg-white/80 sm:bg-white/60 sm:py-4 sm:px-1 lg:px-10">
+    <div className = "flex sm:flex-row sm:justify-evenly md:justify-around lg:justify-between xl:justify-around items-center xsz:mx-3 xsz:my-2 xsz:rounded-md xsz:py-3 xsz:px-4 xsz:shadow-lg xsz:bg-white/80 sm:bg-white/60 sm:py-4 sm:px-1 lg:px-10 xl:py-1 xl:mx-6">
       
       {/* First Block main Content */}
       <div className="contentBlock sm:bg-secondary/50 xsz:space-y-3 sm:w-2/4 sm:py-4 sm:px-3 sm:rounded-md sm:shadow-lg md:space-y-5 md:px-5 xl:w-2/4 xl:py-6 xl:px-8 xl:shadow-xl 2xl:space-y-7 2xl:px-7">

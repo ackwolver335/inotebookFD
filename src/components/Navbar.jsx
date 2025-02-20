@@ -26,7 +26,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="flex justify-between fixed w-full items-center xsz:px-4 xsz:py-2 xl:px-8 xl:py-2 bg-secondary/70 drop-shadow-lg rounded-b-xl">
+    <nav className="flex justify-between fixed left-0 right-0 top-0 items-center xsz:px-4 xsz:py-2 xl:px-8 xl:py-2 bg-secondary/70 drop-shadow-lg rounded-b-xl">
       {/* Setting the image of the main logo */}
       <NavLink to="/">
         <img src={Logo} alt="Main Image Logo Here" className="xsz:w-20 sm:w-24 xl:w-[110px] 2xl:w-[120px]" />
