@@ -2,10 +2,25 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+// Route regarding future flag
+const router = createBrowserRouter(
+  [
+    {
+      path : "/*",
+      element : <App />,
+    },
+  ],
+  {
+    future : {
+      v7_startTransition: true, 
+    },
+  }
+);
 
 createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <StrictMode>
+    <RouterProvider router={router} />
+  </StrictMode>
 );

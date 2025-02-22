@@ -3,7 +3,7 @@ import SideImage from '../assets/SideImage.png';
 
 export default function FirstComp() {
   return (
-    <div className = "flex sm:flex-row sm:justify-evenly md:justify-around lg:justify-between xl:justify-around items-center xsz:mx-3 xsz:my-2 xsz:rounded-md xsz:py-3 xsz:px-4 xsz:shadow-lg xsz:bg-white/80 sm:bg-white/60 sm:py-4 sm:px-1 lg:px-10 xl:py-1 xl:mx-6">
+    <div className = "flex sm:flex-row sm:justify-evenly md:justify-around lg:justify-between xl:justify-around items-center xsz:mx-3 xsz:my-2 xsz:rounded-md xsz:py-3 xsz:px-4 xsz:shadow-lg xsz:bg-white/80 sm:bg-white/60 sm:py-4 sm:px-1 lg:px-10 xl:py-1 xl:mx-6 xl:my-7">
       
       {/* First Block main Content */}
       <div className="contentBlock sm:bg-secondary/50 xsz:space-y-3 sm:w-2/4 sm:py-4 sm:px-3 sm:rounded-md sm:shadow-lg md:space-y-5 md:px-5 xl:w-2/4 xl:py-6 xl:px-8 xl:shadow-xl 2xl:space-y-7 2xl:px-7">
@@ -14,7 +14,7 @@ export default function FirstComp() {
         </p>
 
         {/* Button regarding mark over to the Notes creation Block */}
-        <button type = "button" className = "border-2 border-primary xsz:rounded-md xsz:text-sm font-merriweather xsz:font-semibold xsz:py-1 xsz:px-3 text-white bg-secondary/80 cursor-pointer sm:text-black sm:bg-primary/80 sm:border-1 sm:border-secondary sm:rounded-sm md:text-base lg:text-lg lg:px-4 lg:py-2 lg:border-none lg:bg-secondary/90 lg:text-primary 2xl:text-xl 2xl:px-5 2xl:py-3 2xl:rounded-lg"> 
+        <button type = "button" className = "xsz:rounded-md xsz:text-[12px] font-poppins xsz:font-semibold xsz:py-1 xsz:px-3 text-white bg-secondary/80 cursor-pointer sm:rounded-sm md:text-base lg:text-lg lg:px-4 lg:py-2 lg:border-none lg:bg-secondary/90 lg:text-primary 2xl:text-xl 2xl:px-5 2xl:py-3 2xl:rounded-lg"> 
           Get Started
         </button>
         
