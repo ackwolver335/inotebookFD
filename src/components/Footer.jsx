@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 export default function Footer() {
   return (
-    <div className = "pageFooter font-roboto flex justify-between items-center xl:mx-6 xsz:mx-2 backdrop-blur-sm bg-white/50 fixed xsz:bottom-3 xsz:left-0 xsz:right-0 xsz:rounded-sm xsz:py-1 xsz:px-3 sm:px-4 lg:px-5 xsz:text-sm md:text-base lg:rounded-lg 2xl:text-lg">
+    <div className = "z-10 pageFooter font-roboto flex justify-between items-center xl:mx-6 xsz:mx-2 backdrop-blur-sm bg-white/50 fixed xsz:bottom-3 xsz:left-0 xsz:right-0 xsz:rounded-sm xsz:py-1 xsz:px-3 sm:px-4 lg:px-5 xsz:text-sm md:text-base lg:rounded-lg 2xl:text-lg">
       
       {/* Paragraph regarding the Copyright details */}
       <p className = "xsz:font-semibold">

@@ -11,7 +11,7 @@ export default function Navbar() {
 
   // using useEffect hook in order to check the location here
   useEffect(() => {
-  },[location])
+  }, [location])
 
   // defining a method for toggling the menu bar here
   const showMenu = () => {
@@ -22,11 +22,11 @@ export default function Navbar() {
     // if user don't interact for 4 seconds it will automatically disappers
     setTimeout(() => {
       document.querySelector('.menuList').classList.add('xsz:translate-x-20');
-    },4000);
+    }, 4000);
   }
 
   return (
-    <nav className="flex backdrop-blur-sm justify-between fixed left-0 right-0 top-0 items-center xsz:px-4 xsz:py-2 xl:px-8 xl:py-2 bg-secondary/60 drop-shadow-lg rounded-b-xl">
+    <nav className="z-10 flex backdrop-blur-sm justify-between fixed left-0 right-0 top-0 items-center xsz:px-4 xsz:py-2 xl:px-8 xl:py-2 bg-secondary/60 drop-shadow-lg rounded-b-xl">
       {/* Setting the image of the main logo */}
       <NavLink to="/">
         <img src={Logo} alt="Main Image Logo Here" className="xsz:w-20 sm:w-24 xl:w-[110px] 2xl:w-[120px]" />
