@@ -75,8 +75,35 @@ const NoteState = (props) => {
     // defining the state using useState Hook
     const [notes, setNotes] = useState(notesInitial);
 
-    return (                                                        // boiler plate code that we always have to include here
-        <noteContext.Provider value={{ notes, setNotes }}>
+    // defining some methods here
+    // 1. Method for adding a note here
+    const addNote = (title,description,tag) => {           // getting the title, description & tag of the Note
+        
+        const note = {
+            "_id": "67bab0073f363e5d94165b1a",
+            "user": "67a4ffb4aca89731aff8ef21",
+            "title": title,
+            "description": description,
+            "tag": tag,
+            "date": "2025-02-23T05:20:07.186Z",
+            "__v": 0
+        };                                  // specifying null will be updated further : API CALL
+        
+        setNotes(notes.concat(note));       // pushing the note here
+    }
+
+    // 2. Method for deleting a note
+    const deleteNote = (id) => {
+        
+    }
+
+    // 3. Method for editing a note
+    const editNote = (id) => {
+        
+    }
+
+    return (                                                                        // boiler plate code that we always have to include here
+        <noteContext.Provider value={{ notes, addNote, deleteNote, editNote }}>    {/* passing those methods here regarding different operations */}
             {props.children}
         </noteContext.Provider>
     )
