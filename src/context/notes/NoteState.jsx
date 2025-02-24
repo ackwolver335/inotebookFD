@@ -24,6 +24,51 @@ const NoteState = (props) => {
             "tag": "Happy",
             "date": "2025-02-23T05:20:07.186Z",
             "__v": 0
+        },
+        {
+            "_id": "67bab0073f361e5d94162b1a",
+            "user": "67a4ffb4aca89731aff8ef21",
+            "title": "My Schedule for Getting",
+            "description": "This is a general day description here for some of my friends.",
+            "tag": "Happy",
+            "date": "2025-02-23T05:20:07.186Z",
+            "__v": 0
+        },
+        {
+            "_id": "67bab0073f361e5d94162b1a",
+            "user": "67a4ffb4aca89731aff8ef21",
+            "title": "My Schedule for Getting",
+            "description": "This is a general day description here for some of my friends.",
+            "tag": "Happy",
+            "date": "2025-02-23T05:20:07.186Z",
+            "__v": 0
+        },
+        {
+            "_id": "67bab0073f361e5d94162b1a",
+            "user": "67a4ffb4aca89731aff8ef21",
+            "title": "My Schedule for Getting",
+            "description": "This is a general day description here for some of my friends.",
+            "tag": "Happy",
+            "date": "2025-02-23T05:20:07.186Z",
+            "__v": 0
+        },
+        {
+            "_id": "67bab0073f361e5d94162b1a",
+            "user": "67a4ffb4aca89731aff8ef21",
+            "title": "My Schedule for Getting",
+            "description": "This is a general day description here for some of my friends.",
+            "tag": "Happy",
+            "date": "2025-02-23T05:20:07.186Z",
+            "__v": 0
+        },
+        {
+            "_id": "67bab0073f361e5d94162b1a",
+            "user": "67a4ffb4aca89731aff8ef21",
+            "title": "My Schedule for Getting",
+            "description": "This is a general day description here for some of my friends.",
+            "tag": "Happy",
+            "date": "2025-02-23T05:20:07.186Z",
+            "__v": 0
         }
     ]
 
