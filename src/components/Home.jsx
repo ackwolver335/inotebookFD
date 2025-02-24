@@ -5,7 +5,7 @@ import YourNote from './YourNote'
 
 export default function Home() {
   return (
-    <div className = "xsz:pt-18 lg:pt-20 xl:pt-24 xl:pb-16">
+    <div className = "xsz:py-16 sm:py-18 md:py-20 xl:py-22">
       <FirstComp />
       <AddNote />
       <YourNote />
