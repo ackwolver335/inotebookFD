@@ -14,7 +14,7 @@ export default function YourNote() {
         <h1 className="font-merriweather xsz:font-semibold text-secondary/80 md:drop-shadow-md lg:drop-shadow-lg xsz:text-lg md:text-xl lg:text-2xl 2xl:text-[26px]"> Your Notes </h1>
         <div className="notesBlock grid xsz:grid-flow-row xsz:space-y-3 sm:grid-flow-col sm:gap-4 xl:gap-5 sm:grid-rows-4 md:grid-rows-2 lg:grid-rows-3 xl:grid-rows-4 2xl:grid-rows-2">
           {notes.map((note) => {
-            return <Noteitem key={note.id || note._id} note={note} />        // passing the note as props
+            return <Noteitem key={note._id} note={note} />        // passing the note as props
           })}
         </div>
 

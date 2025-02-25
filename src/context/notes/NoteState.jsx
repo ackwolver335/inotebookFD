@@ -94,11 +94,15 @@ const NoteState = (props) => {
 
     // 2. Method for deleting a note
     const deleteNote = (id) => {
-        
+
+        // API CALL : To be Added
+
+        const newNote = notes.filter((note) => {return note._id !== id});           // creating a new note list after removing the one asked
+        setNotes(newNote);                                                          // setting the newNote list as current note list
     }
 
     // 3. Method for editing a note
-    const editNote = (id) => {
+    const editNote = (id,title,description,tag) => {
         
     }
 

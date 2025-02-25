@@ -70,7 +70,7 @@ export default function AddNote() {
                 <div className="submissionBlock xsz:space-x-3 sm:space-x-4 2xl:space-x-5">
 
                     {/* Button for final submission of the Data */}
-                    <button type = "submit" className = "xsz:bg-secondary/80 xsz:text-[12px] xsz:font-semibold font-poppins text-white xsz:px-3 xsz:py-1 xsz:rounded-sm active:text-secondary active:bg-primary/80 sm:text-sm lg:text-base 2xl:text-[18px] cursor-pointer shadow-2xl" onClick={submitNote}> Submit Note </button>
+                    <button type = "submit" className = "xsz:bg-secondary/80 xsz:text-[12px] xsz:font-semibold font-poppins text-white xsz:px-3 xsz:py-1 xsz:rounded-sm active:text-secondary active:bg-primary/80 sm:text-sm lg:text-base 2xl:text-[18px] cursor-pointer shadow-2xl" onClick={submitNote}> Add Note </button>
                     
                     {/* Button for clearing all the data */}
                     <button type = "button" className = "xsz:bg-secondary/80 xsz:text-[12px] xsz:font-semibold font-poppins text-white xsz:px-3 xsz:py-1 xsz:rounded-sm active:text-secondary active:bg-primary/80 sm:text-sm lg:text-base 2xl:text-[18px] cursor-pointer shadow-2xl" onClick = {clearAllEntry}> Clear Note </button>
