@@ -11,6 +11,7 @@ export default function AddNote() {
 
     // definig the useState Hook here for Note's Title
     const[title,setTitle] = useState('');
+    const[tag,setTag] = useState('');
     const[data,setData] = useState('');
 
     // onChange state for Note's Title
@@ -25,6 +26,12 @@ export default function AddNote() {
         setData(event.target.value);
     }
 
+    // onchange state for Note's Tag
+    const handleTag = (event) => {
+        setNote({...note,[event.target.name]: event.target.value});
+        setTag()
+    }
+
     // using useState Hook here in order to clear the data whenever required from the client side
     const clearAllEntry = () => {
         
@@ -35,6 +42,10 @@ export default function AddNote() {
         // clearing the note's data
         let newData = '';
         setData(newData);
+
+        // clearing the note's tag
+        let newTag = '';
+        setTag(newTag);
     }
 
     // Method regarding notes submission
@@ -44,7 +55,7 @@ export default function AddNote() {
     }
 
     return (
-        <div className="addNote xsz:bg-white/70 lg:bg-white/80 xsz:mx-3 xsz:my-3 xl:mx-6 xl:my-6 2xl:my-8 xsz:rounded-md xsz:shadow-md lg:shadow-lg xsz:px-4 xsz:py-3 lg:p-5">
+        <div className="z-5 addNote xsz:bg-white/70 lg:bg-white/80 xsz:mx-3 xsz:my-3 xl:mx-6 xl:my-6 2xl:my-8 xsz:rounded-md xsz:shadow-md lg:shadow-lg xsz:px-4 xsz:py-3 lg:p-5">
 
             {/* Main form regarding addition of the notes of the user */}
             <form className = "xsz:space-y-3 md:space-y-4 2xl:space-y-6">
@@ -59,6 +70,12 @@ export default function AddNote() {
                     <p className = "xsz:text-[13px] text-secondary xsz:opacity-45 lg:text-[14px] 2xl:text-base">
                         We usually works with security without sharing your personal data.
                     </p>
+                </div>
+
+                {/* Main title Block */}
+                <div className = "flex flex-col xsz:gap-3">
+                    <label htmlFor = "tag" className = "xsz:text-base font-merriweather xsz:drop-shadow-lg lg:text-lg 2xl:text-xl"> Note's Tag </label>
+                    <input type="text" placeholder = "Your Note's Tag" value = {tag} id = "tag" name = "tag" className = "xsz:bg-secondary/40 xsz:py-2 xsz:px-3 text-white xsz:text-sm lg:text-[15px] 2xl:text-[17px] font-inter xsz:rounded-sm" onChange = {handleTag} required/>
                 </div>
 
                 {/* Main Note's Data Here */}
