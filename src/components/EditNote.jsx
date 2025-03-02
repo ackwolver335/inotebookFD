@@ -1,10 +1,10 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import noteContext from '../context/notes/noteContext';
 
 export default function EditNote(props) {
 
     const context = useContext(noteContext);                    // using the useContext regarding fetching of all notes
-    const {addNote} = context;                                  // destructuring regarding particular context
+    const {editNote} = context;                                  // destructuring regarding particular context
 
     // defining a state regarding notes addition
     const [note, setNote] = useState({title : "", description : "",tag : ""})
@@ -29,13 +29,13 @@ export default function EditNote(props) {
     // onchange state for Note's Tag
     const handleTag = (event) => {
         setNote({...note,[event.target.name]: event.target.value});
-        setTag()
+        setTag(event.target.value);
     }
 
     // Method regarding notes submission
     const submitNote = (event) => {
         event.preventDefault();                 // preventDefault() method will prevent the page from loading
-        addNote(note.title,note.description,note.tag);
+        editNote(note._id,note.title,note.description,note.tag);
     }
 
     // using useState Hook here in order to clear the data whenever required from the client side
@@ -58,6 +58,7 @@ export default function EditNote(props) {
     const closeUpdation = () => {
         document.querySelector(".editModal").classList.add("-translate-y-[500px]");
         document.querySelector(".editModal").classList.remove("bottom-0");
+        props.setSelectedNote(null);
     }
 
     // Method for mouseover from the Form Block for 5 seconds it will automatically close
@@ -68,8 +69,17 @@ export default function EditNote(props) {
         },5000);
     }
 
+    useEffect(() => {
+        if(props.note){
+            setNote(props.note);
+            setTitle(props.note.title);
+            setData(props.note.description);
+            setTag(props.note.tag); 
+        }
+    }, [props.note]);
+
     return (
-        <div className="editModal fixed bg-secondary/30 top-0 z-20 w-100% left-0 right-0 bottom-0 xsz:py-5 xsz:px-3 flex justify-center items-center ease-out transition-all duration-500">
+        <div className="editModal fixed bg-secondary/30 top-0 z-20 w-100% left-0 right-0 xsz:py-5 xsz:px-3 flex justify-center items-center ease-out transition-all duration-500 -translate-y-[500px]">
 
             {/* Defining a Block regarding the Modal here */}
             <form className="bg-white/90 xsz:py-3 xsz:px-4 xsz:w-90 xsz:rounded-md xsz:shadow-lg xsz:space-y-3" onMouseLeave={formOut}>
@@ -106,7 +116,7 @@ export default function EditNote(props) {
                 <div className="submissionBlock xsz:space-x-3">
 
                     {/* Button regarding final data Submission */}
-                    <button type = "submit" className = "bg-secondary/80 xsz:text-sm font-poppins font-semibold text-white xsz:py-1 xsz:px-3 xsz:rounded-sm active:text-secondary active:bg-primary cursor-pointer shadow-lg" > Update Note </button>
+                    <button type = "submit" className = "bg-secondary/80 xsz:text-sm font-poppins font-semibold text-white xsz:py-1 xsz:px-3 xsz:rounded-sm active:text-secondary active:bg-primary cursor-pointer shadow-lg" onClick = {submitNote} > Update Note </button>
 
                     {/* Button regarding clearing all Note's Data */}
                     <button type = "button" className = "bg-secondary/80 xsz:text-sm font-poppins font-semibold text-white xsz:py-1 xsz:px-3 xsz:rounded-sm active:text-secondary active:bg-primary cursor-pointer shadow-lg" onClick = {clearAllEntry} > Clear Note </button>

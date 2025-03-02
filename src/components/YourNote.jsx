@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import noteContext from '../context/notes/noteContext';
 import Noteitem from './Noteitem';
 import EditNote from './EditNote';
@@ -8,23 +8,30 @@ export default function YourNote() {
   const context = useContext(noteContext);                 // using the useContext regarding fetching of all notes
   const { notes, getNotes } = context;                        // destructuring regarding particular context
 
+  // regarding modal visibility
+  const [selectedNote, setSelectedNote] = useState(null);
+  
+  // defining a state regarding notes addition
+  const [note, setNote] = useState({title : "", description : "",tag : ""})
+
   useEffect(() => {
     getNotes();
     // eslint-disable-next-line
-  },[])
-
-  let updateBlock = '';
+  },[]);
 
   // defining the update note method here
   const updateNote = (note) => {
-
+    setSelectedNote(note);                                                              // Set the selected note
+    document.querySelector(".editModal").classList.remove("-translate-y-[500px]");
+    document.querySelector(".editModal").classList.add("bottom-0");
+    setNote(note);                                                                      // Pass the note to EditNote
   }
 
   return (
     <>
 
       {/* Adding the Modal here regarding Editing the Note */}
-      <EditNote  />
+      <EditNote note = {selectedNote} setSelectedNote = {setSelectedNote} />
 
       <div className="z-5 userNotes xsz:space-y-2 lg:space-y-3 bg-white/80 xsz:mx-3 xsz:my-3 xsz:rounded-md xsz:shadow-md xsz:py-3 xsz:px-4 xl:mx-6">
 
