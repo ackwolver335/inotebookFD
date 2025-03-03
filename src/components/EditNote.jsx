@@ -7,7 +7,7 @@ export default function EditNote(props) {
     const {editNote} = context;                                  // destructuring regarding particular context
 
     // defining a state regarding notes addition
-    const [note, setNote] = useState({title : "", description : "",tag : ""})
+    const [note, setNote] = useState({id : "",title : "", description : "",tag : ""})
 
     // definig the useState Hook here for Note's Title
     const[title,setTitle] = useState('');
@@ -36,6 +36,7 @@ export default function EditNote(props) {
     const submitNote = (event) => {
         event.preventDefault();                 // preventDefault() method will prevent the page from loading
         editNote(note._id,note.title,note.description,note.tag);
+        closeUpdation();
     }
 
     // using useState Hook here in order to clear the data whenever required from the client side
@@ -79,10 +80,10 @@ export default function EditNote(props) {
     }, [props.note]);
 
     return (
-        <div className="editModal fixed bg-secondary/30 top-0 z-20 w-100% left-0 right-0 xsz:py-5 xsz:px-3 flex justify-center items-center ease-out transition-all duration-500 -translate-y-[500px]">
+        <div className="editModal fixed bg-secondary/30 top-0 z-20 w-100% left-0 right-0 xsz:py-5 xsz:px-3 flex justify-center items-center ease-out transition-all duration-500 -translate-y-[500px]" onMouseLeave={formOut}>
 
             {/* Defining a Block regarding the Modal here */}
-            <form className="bg-white/90 xsz:py-3 xsz:px-4 xsz:w-90 xsz:rounded-md xsz:shadow-lg xsz:space-y-3" onMouseLeave={formOut}>
+            <form className="bg-white/90 xsz:py-3 xsz:px-4 xsz:w-90 xsz:rounded-md xsz:shadow-lg xsz:space-y-3">
 
                 {/* Main Heading and Close Button */}
                 <div className="flex flex-row justify-between">

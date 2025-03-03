@@ -7,7 +7,7 @@ export default function AddNote() {
     const {addNote} = context;                                  // destructuring regarding particular context
 
     // defining a state regarding notes addition
-    const [note, setNote] = useState({title : "", description : "",tag : ""})
+    const [note, setNote] = useState({id : "",title : "", description : "",tag : ""})
 
     // definig the useState Hook here for Note's Title
     const[title,setTitle] = useState('');
@@ -29,7 +29,7 @@ export default function AddNote() {
     // onchange state for Note's Tag
     const handleTag = (event) => {
         setNote({...note,[event.target.name]: event.target.value});
-        setTag()
+        setTag(event.target.value)
     }
 
     // using useState Hook here in order to clear the data whenever required from the client side

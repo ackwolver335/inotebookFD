@@ -29,6 +29,10 @@ const NoteState = (props) => {
             // regarding the body conversion into json format
             body: JSON.stringify({title,description,tag}),
         });
+
+        // Getting the response from the server to be stored
+        const json = await response.json();
+        console.log(json);
         
         const note = {
             "_id": "67bab0073f363e5d94165b1a",
@@ -68,7 +72,7 @@ const NoteState = (props) => {
 
         // API Calls here
         const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
-            method: 'POST',                                                         // method in order to retrieve the data from the backend
+            method: 'PUT',                                                          // method in order to retrieve the data from the backend
             headers: {                                                              // regarding the headers that we passed or observed in the Backend
                 'Content-type' : 'application/json',
                 'auth-token' : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjdhNGZmYjRhY2E4OTczMWFmZjhlZjIxIn0sImlhdCI6MTczODg2Nzc3N30.gWKSWKBh5oq5PKLLy2gmRUywhJx-YFh76fnuNZiN6XE'
@@ -77,9 +81,6 @@ const NoteState = (props) => {
             // regarding the body conversion into json format
             body: JSON.stringify({title,description,tag}),
         });
-
-        // Getting the response from the server to be stored
-        const json = response.json();
         
         // Using for loop concept here in order to check specific note that is to be edited
         for (let index = 0; index < notes.length; index++) {
