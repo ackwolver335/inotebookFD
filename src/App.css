@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+/* Applying custom css regarding different breakpoints */
+@theme{
+    
+    /* defining some breakpoints here another way to set the breakpoints */
+    --breakpoint-xsz: 320px;
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
+    --breakpoint-3xl: 1920px;
+
+    /* Adding some color using the hexcode here */
+    --color-primary: #f9d342;
+    --color-secondary: #292826;
+
+}
+
+body{
+    background-image: url("./assets/Background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    background-attachment: fixed;
+}
+
+/* Including the font-family here only */
+@layer utilities{
+    .font-poppins{
+        font-family: "Poppins", serif;
+    }
+
+    .font-merriweather{
+        font-family: "Merriweather", serif;
+    }
+
+    .font-inter{
+        font-family: "Inter", serif;
+    }
+
+    .font-roboto{
+        font-family: "Roboto", serif;
+    }
+}
