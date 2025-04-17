@@ -98,7 +98,7 @@ export default function EditNote(props) {
                 {/* Form Elements regarding Updation of the Data */}
                 <div className = "flex flex-col xsz:gap-2">
                     <label htmlFor = "title" className = "xsz:text-base font-merriweather xsz:font-semibold"> Note's Title </label>
-                    <input type = "text" value = {title} id = "title" name = "title" className = "xsz:bg-secondary/60 xsz:rounded-sm xsz:p-2 text-white font-inter xsz:text-sm" placeholder = "New Note's Title" onChange={handleTitle} required/>
+                    <input type = "text" value = {title} id = "title" name = "title" className = "xsz:bg-secondary/60 xsz:rounded-sm xsz:p-2 text-white font-inter xsz:text-sm" placeholder = "New Note's Title" onChange={handleTitle} minLength = {5} required/>
                 </div>
 
                 {/* New Tag for the Selected Note */}
@@ -110,14 +110,14 @@ export default function EditNote(props) {
                 {/* New Note's Description regarding Edition */}
                 <div className = "flex flex-col xsz:gap-2">
                     <label htmlFor = "description" className = "xsz:text-base font-merriweather xsz:font-semibold"> Note's Data </label>
-                    <textarea name = "description" id = "description" cols = "20" rows = "3" placeholder = "New Description regarding Updation" className = "bg-secondary/60 xsz:py-2 xsz:px-3 text-white font-inter xsz:text-sm xsz:rounded-sm resize-none" value = {data} onChange = {handleData} required ></textarea>
+                    <textarea name = "description" id = "description" cols = "20" rows = "3" placeholder = "New Description regarding Updation" className = "bg-secondary/60 xsz:py-2 xsz:px-3 text-white font-inter xsz:text-sm xsz:rounded-sm resize-none" value = {data} onChange = {handleData} minLength = {10} required ></textarea>
                 </div>
 
                 {/* Block regarding Submission of the Data */}
                 <div className="submissionBlock xsz:space-x-3">
 
                     {/* Button regarding final data Submission */}
-                    <button type = "submit" className = "bg-secondary/80 xsz:text-sm font-poppins font-semibold text-white xsz:py-1 xsz:px-3 xsz:rounded-sm active:text-secondary active:bg-primary cursor-pointer shadow-lg" onClick = {submitNote} > Update Note </button>
+                    <button type = "submit" disabled = {note.title.length < 5 || note.description.length < 10} className = "bg-secondary/80 xsz:text-sm font-poppins font-semibold text-white xsz:py-1 xsz:px-3 xsz:rounded-sm active:text-secondary active:bg-primary cursor-pointer shadow-lg" onClick = {submitNote} > Update Note </button>
 
                     {/* Button regarding clearing all Note's Data */}
                     <button type = "button" className = "bg-secondary/80 xsz:text-sm font-poppins font-semibold text-white xsz:py-1 xsz:px-3 xsz:rounded-sm active:text-secondary active:bg-primary cursor-pointer shadow-lg" onClick = {clearAllEntry} > Clear Note </button>

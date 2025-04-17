@@ -50,8 +50,10 @@ export default function AddNote() {
 
     // Method regarding notes submission
     const submitNote = (event) => {
-        event.preventDefault();                 // preventDefault() method will prevent the page from loading
+        event.preventDefault();                                             // preventDefault() method will prevent the page from loading
         addNote(note.title,note.description,note.tag);
+        setNote({id : "",title : "", description : "",tag : ""});           // Resetting the notes once submitted by the user
+        clearAllEntry();                                                    // Cause above resetting not working in UI I have cleared from here
     }
 
     return (
@@ -66,7 +68,7 @@ export default function AddNote() {
                 {/* Main title Block */}
                 <div className = "flex flex-col xsz:gap-3">
                     <label htmlFor = "title" className = "xsz:text-base font-merriweather xsz:drop-shadow-lg lg:text-lg 2xl:text-xl"> Note's Title </label>
-                    <input type="text" placeholder = "Your Note's Title" value = {title} id = "title" name = "title" className = "xsz:bg-secondary/40 xsz:py-2 xsz:px-3 text-white xsz:text-sm lg:text-[15px] 2xl:text-[17px] font-inter xsz:rounded-sm" onChange = {handleTitle} required/>
+                    <input type="text" placeholder = "Your Note's Title" value = {title} id = "title" name = "title" className = "xsz:bg-secondary/40 xsz:py-2 xsz:px-3 text-white xsz:text-sm lg:text-[15px] 2xl:text-[17px] font-inter xsz:rounded-sm" onChange = {handleTitle} minLength = {5} required/>
                     <p className = "xsz:text-[13px] text-secondary xsz:opacity-45 lg:text-[14px] 2xl:text-base">
                         We usually works with security without sharing your personal data.
                     </p>
@@ -81,13 +83,13 @@ export default function AddNote() {
                 {/* Main Note's Data Here */}
                 <div className = "flex flex-col xsz:gap-2">
                     <label htmlFor = "description" className = "xsz:text-base font-merriweather xsz:drop-shadow-lg lg:text-lg 2xl:text-xl"> Note's Data </label>
-                    <textarea id = "description" name = "description" cols = "30" rows = "4" placeholder = "Your Note's Data here" className = "xsz:bg-secondary/40 xsz:py-2 xsz:px-3 text-white xsz:text-sm lg:text-[15px] 2xl:text-[17px] font-inter xsz:rounded-sm resize-none" value = {data} onChange = {handleData} required></textarea>
+                    <textarea id = "description" name = "description" cols = "30" rows = "4" placeholder = "Your Note's Data here" className = "xsz:bg-secondary/40 xsz:py-2 xsz:px-3 text-white xsz:text-sm lg:text-[15px] 2xl:text-[17px] font-inter xsz:rounded-sm resize-none" value = {data} onChange = {handleData} required minLength = {10}></textarea>
                 </div>
 
                 <div className="submissionBlock xsz:space-x-3 sm:space-x-4 2xl:space-x-5">
 
                     {/* Button for final submission of the Data */}
-                    <button type = "submit" className = "xsz:bg-secondary/80 xsz:text-[12px] xsz:font-semibold font-poppins text-white xsz:px-3 xsz:py-1 xsz:rounded-sm active:text-secondary active:bg-primary/80 sm:text-sm lg:text-base 2xl:text-[18px] cursor-pointer shadow-2xl" onClick={submitNote}> Add Note </button>
+                    <button type = "submit" disabled = {note.title.length < 5 || note.description.length < 10} className = "xsz:bg-secondary/80 xsz:text-[12px] xsz:font-semibold font-poppins text-white xsz:px-3 xsz:py-1 xsz:rounded-sm active:text-secondary active:bg-primary/80 sm:text-sm lg:text-base 2xl:text-[18px] cursor-pointer shadow-2xl" onClick={submitNote}> Add Note </button>
                     
                     {/* Button for clearing all the data */}
                     <button type = "button" className = "xsz:bg-secondary/80 xsz:text-[12px] xsz:font-semibold font-poppins text-white xsz:px-3 xsz:py-1 xsz:rounded-sm active:text-secondary active:bg-primary/80 sm:text-sm lg:text-base 2xl:text-[18px] cursor-pointer shadow-2xl" onClick = {clearAllEntry}> Clear Note </button>

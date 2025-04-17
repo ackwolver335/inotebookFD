@@ -32,19 +32,8 @@ const NoteState = (props) => {
 
         // Getting the response from the server to be stored
         const json = await response.json();
-        console.log(json);
+        setNotes(notes.concat(json));       // pushing the note here
         
-        const note = {
-            "_id": "67bab0073f363e5d94165b1a",
-            "user": "67a4ffb4aca89731aff8ef21",
-            "title": title,
-            "description": description,
-            "tag": tag,
-            "date": "2025-02-23T05:20:07.186Z",
-            "__v": 0
-        };                                  // specifying null will be updated further : API CALL
-        
-        setNotes(notes.concat(note));       // pushing the note here
     }
 
     // 2. Method for deleting a note
@@ -61,7 +50,6 @@ const NoteState = (props) => {
 
         // response regarding the deletion from the server
         const json = await response.json();
-        console.log(json)
 
         const newNote = notes.filter((note) => {return note._id !== id});           // creating a new note list after removing the one asked
         setNotes(newNote);                                                          // setting the newNote list as current note list
