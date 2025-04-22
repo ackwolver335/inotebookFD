@@ -12,7 +12,7 @@ export default function Login() {
   let navigate = useNavigate();
 
   // specifying starting point
-  const host= "http://localhost:5000"
+  const host= "http://localhost:5000";
 
   // onSubmition event for the Form
   const submitData = async (e) => {
@@ -52,7 +52,7 @@ export default function Login() {
   return (
     
     // Main Login Block here
-    <div className="xsz:py-16 sm:py-18 md:py-20 xl:py-22">
+    <div className="xsz:py-16 sm:py-18 md:py-20 sm:mx-16 md:mx-24 lg:mx-36 xl:mx-44 2xl:mx-52 xl:py-22">
 
       {/* Login form */}
       <form className = "xsz:bg-white/80 xsz:my-2 md:my-3 xsz:mx-4 xsz:py-4 xsz:px-3 lg:p-5 xsz:rounded-md lg:space-y-2" onSubmit={submitData}>
@@ -77,7 +77,6 @@ export default function Login() {
         <div className="loginBtn flex flex-row xsz:gap-4">
 
           <button type = "submit" className = "xsz:bg-secondary/80 xsz:text-[12px] text-white font-poppins xsz:px-3 xsz:py-1 xsz:rounded-sm active:text-secondary active:bg-primary cursor-pointe shadow-2xl lg:text-[15px] lg:py-2 lg:px-3 cursor-pointer"> Login Account </button>
-          <button type = "reset" className = "xsz:bg-secondary/80 xsz:text-[12px] text-white font-poppins xsz:px-3 xsz:py-1 xsz:rounded-sm active:text-secondary active:bg-primary cursor-pointe shadow-2xl lg:text-[15px] lg:py-2 lg:px-3 cursor-pointer"> Clear All </button>
 
         </div>
 

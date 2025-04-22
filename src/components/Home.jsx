@@ -10,8 +10,7 @@ export default function Home() {
 
       {/* Adding an alert component here regarding different alerts */}
       <Alert message = "This is an alert message" />
-
-      <FirstComp />
+      
       <AddNote />
       <YourNote />
     </div>
