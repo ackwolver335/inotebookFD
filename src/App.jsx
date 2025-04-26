@@ -8,25 +8,30 @@ import Footer from './components/Footer'
 import Login from './components/Login'
 import Signup from './components/Signup'
 
+// using alertState regarding the alert of the Page
+import AlertState from './context/alert/AlertState'
+
 function App() {
 
   return (
     <>
-      <NoteState>
-        {/* Adding a Navbar Here */}
-        <Navbar />
+      <AlertState>
+        <NoteState>
+          {/* Adding a Navbar Here */}
+          <Navbar />
 
-        {/* Setting some more Routes for different pages */}
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-        </Routes>
+          {/* Setting some more Routes for different pages */}
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+          </Routes>
 
-        {/* Adding page footer here regarding bottom links */}
-        <Footer />
-      </NoteState>
+          {/* Adding page footer here regarding bottom links */}
+          <Footer />
+        </NoteState>
+      </AlertState>
     </>
   )
 }

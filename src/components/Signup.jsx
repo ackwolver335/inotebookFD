@@ -1,5 +1,7 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import { useNavigate } from 'react-router-dom'
+import Alert from './Alert';
+import alertContext from '../context/alert/alertContext';
 
 export default function Signup() {
 
@@ -10,6 +12,9 @@ export default function Signup() {
     email : "",
     password : ""
   });
+
+  // using context API regarding showAlert() method
+  const {showAlert} = useContext(alertContext);
 
   // setting up the navigation key
   let navigate = useNavigate();
@@ -44,8 +49,11 @@ export default function Signup() {
       localStorage.setItem('token',json.jwtToken);
       navigate("/");
 
+      // using showalert for showing the details of it
+      showAlert("User Sign Up Successfully !","Success","Sign Up");
+
     } else {
-      alert("You have provided invalid Credentials !");             // warning alert at initial level
+      showAlert("Provided invalid Credentials !","Danger","Not Login");         // in case user have provided wrong credentials
     }
 
   };
@@ -57,6 +65,9 @@ export default function Signup() {
 
   return (
     <div className="xsz:py-16 sm:py-18 sm:my-3 xl:my-0 md:py-20 xl:py-22 sm:mx-16 lg:mx-36 xl:mx-44 2xl:mx-52">
+
+      {/* using alert Component for different kinds of Warnings */}
+      <Alert />
 
       {/* Form for new user's creation */}
       <form className="xsz:bg-white/80 xsz:my-2 md:my-3 xsz:mx-4 xsz:py-4 xsz:px-3 lg:p-5 xsz:rounded-md lg:space-y-2" onSubmit={submitData}>

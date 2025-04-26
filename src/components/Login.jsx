@@ -1,12 +1,18 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import { useNavigate } from 'react-router-dom';
+import Alert from './Alert';
+import alertContext from '../context/alert/alertContext';
 
 export default function Login() {
 
+  // useState for incoming credentials from the client side
   const [credentials,setCredentials] = useState({
     email: "",
     password: ""
   });
+
+  // using context API regarding showAlert() method
+  const {showAlert} = useContext(alertContext);
 
   // using the history with useHistory() hook
   let navigate = useNavigate();
@@ -36,11 +42,14 @@ export default function Login() {
     if(json.success){
       
       // saving the auth-token in our local storage
-      localStorage.setItem('token',json['auth-token']);
+      localStorage.setItem('token',json.jwtToken);
       navigate("/");
 
+      // using showalert for showing the details of it
+      showAlert("User Logged Successfully !","Success","Login");
+
     } else {
-      alert("You have provided invalid Credentials !");             // warning alert at initial level
+      showAlert("Provided invalid Credentials !","Danger","Not Login");         // in case user have provided wrong credentials
     }
   }
 
@@ -53,6 +62,9 @@ export default function Login() {
     
     // Main Login Block here
     <div className="xsz:py-16 sm:py-18 md:py-20 sm:mx-16 md:mx-24 lg:mx-36 xl:mx-44 2xl:mx-52 xl:py-22">
+
+      {/* Using the alert component here */}
+      <Alert />
 
       {/* Login form */}
       <form className = "xsz:bg-white/80 xsz:my-2 md:my-3 xsz:mx-4 xsz:py-4 xsz:px-3 lg:p-5 xsz:rounded-md lg:space-y-2" onSubmit={submitData}>
