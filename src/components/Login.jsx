@@ -14,7 +14,7 @@ export default function Login() {
   // using context API regarding showAlert() method
   const {showAlert} = useContext(alertContext);
 
-  // using the history with useHistory() hook
+  // using usenavigate() hook for different page navigations
   let navigate = useNavigate();
 
   // specifying starting point
@@ -43,10 +43,12 @@ export default function Login() {
       
       // saving the auth-token in our local storage
       localStorage.setItem('token',json.jwtToken);
-      navigate("/");
-
+      
       // using showalert for showing the details of it
       showAlert("User Logged Successfully !","Success","Login");
+      
+      // navigating to the main page.
+      navigate("/");
 
     } else {
       showAlert("Provided invalid Credentials !","Danger","Not Login");         // in case user have provided wrong credentials

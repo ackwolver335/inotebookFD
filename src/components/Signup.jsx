@@ -103,7 +103,6 @@ export default function Signup() {
         <div className="loginBtn flex flex-row xsz:gap-4 xsz:pt-2 lg:pt-1">
 
           <button type = "submit" className = "xsz:bg-secondary/80 xsz:text-[12px] text-white font-poppins xsz:px-3 xsz:py-1 xsz:rounded-sm active:text-secondary active:bg-primary cursor-pointe shadow-2xl lg:text-[15px] lg:py-2 lg:px-3 cursor-pointer"> Create Account </button>
-          <button type = "reset" className = "xsz:bg-secondary/80 xsz:text-[12px] text-white font-poppins xsz:px-3 xsz:py-1 xsz:rounded-sm active:text-secondary active:bg-primary cursor-pointe shadow-2xl lg:text-[15px] lg:py-2 lg:px-3 cursor-pointer"> Clear All </button>
 
         </div>
 

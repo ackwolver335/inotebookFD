@@ -23,7 +23,7 @@ const NoteState = (props) => {
             method: 'POST',                                                         // method in order to retrieve the data from the backend
             headers: {                                                              // regarding the headers that we passed or observed in the Backend
                 'Content-type' : 'application/json',
-                'auth-token' : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjdhNGZmYjRhY2E4OTczMWFmZjhlZjIxIn0sImlhdCI6MTczODg2Nzc3N30.gWKSWKBh5oq5PKLLy2gmRUywhJx-YFh76fnuNZiN6XE'
+                'auth-token' : localStorage.getItem('token')
             },
 
             // regarding the body conversion into json format
@@ -44,12 +44,13 @@ const NoteState = (props) => {
             method : 'DELETE',
             headers: {                                                              // regarding the headers that we passed or observed in the Backend
                 'Content-type' : 'application/json',
-                'auth-token' : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjdhNGZmYjRhY2E4OTczMWFmZjhlZjIxIn0sImlhdCI6MTczODg2Nzc3N30.gWKSWKBh5oq5PKLLy2gmRUywhJx-YFh76fnuNZiN6XE'
+                'auth-token' : localStorage.getItem('token')
             },
         })
 
-        // response regarding the deletion from the server
+        // providing response to the console
         const json = await response.json();
+        console.log(json);
 
         const newNote = notes.filter((note) => {return note._id !== id});           // creating a new note list after removing the one asked
         setNotes(newNote);                                                          // setting the newNote list as current note list
@@ -63,7 +64,7 @@ const NoteState = (props) => {
             method: 'PUT',                                                          // method in order to retrieve the data from the backend
             headers: {                                                              // regarding the headers that we passed or observed in the Backend
                 'Content-type' : 'application/json',
-                'auth-token' : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjdhNGZmYjRhY2E4OTczMWFmZjhlZjIxIn0sImlhdCI6MTczODg2Nzc3N30.gWKSWKBh5oq5PKLLy2gmRUywhJx-YFh76fnuNZiN6XE'
+                'auth-token' : localStorage.getItem('token')
             },
 
             // regarding the body conversion into json format
@@ -91,7 +92,7 @@ const NoteState = (props) => {
             method: 'GET',                                                          // method in order to retrieve the data from the backend
             headers: {                                                              // regarding the headers that we passed or observed in the Backend
                 'Content-type' : 'application/json',
-                'auth-token' : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjdhNGZmYjRhY2E4OTczMWFmZjhlZjIxIn0sImlhdCI6MTczODg2Nzc3N30.gWKSWKBh5oq5PKLLy2gmRUywhJx-YFh76fnuNZiN6XE'
+                'auth-token' : localStorage.getItem('token')
             },
         });
 

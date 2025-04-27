@@ -2,11 +2,15 @@ import React, { useContext, useEffect, useState } from 'react'
 import noteContext from '../context/notes/noteContext';
 import Noteitem from './Noteitem';
 import EditNote from './EditNote';
+import { useNavigate } from 'react-router-dom';
 
 export default function YourNote() {
 
   const context = useContext(noteContext);                    // using the useContext regarding fetching of all notes
   const { notes, getNotes } = context;                        // destructuring regarding particular context
+
+  // usenavigate() hook for navigation over to different page
+  const navigate = useNavigate();
 
   // regarding modal visibility
   const [selectedNote, setSelectedNote] = useState(null);
@@ -15,7 +19,17 @@ export default function YourNote() {
   const [note, setNote] = useState({id : "",title : "", description : "",tag : ""})
 
   useEffect(() => {
-    getNotes();
+
+    // if token isn't empty the notes will be fetched
+    if(localStorage.getItem('token')){
+      getNotes();
+    }
+
+    // else will be navigated to the main Login page or Sign Up page
+    else{
+      navigate("/login");
+    }
+    
     // eslint-disable-next-line
   },[]);
 
