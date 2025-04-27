@@ -6,7 +6,7 @@ import noteContext from "./noteContext";
 const NoteState = (props) => {
 
     // link regarding the backend data to be fetched
-    const host = "http://localhost:5000";
+    const host = process.env.VITE_REACT_BACKEND_URI;
 
     // Hardcode regarding sample notes fetching test
     const notesInitial = [];

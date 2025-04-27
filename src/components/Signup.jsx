@@ -20,7 +20,7 @@ export default function Signup() {
   let navigate = useNavigate();
 
   // specifying starting point
-  const host= "http://localhost:5000";
+  const host= process.env.VITE_REACT_BACKEND_URI;
 
   const submitData = async (e) => {
     e.preventDefault();             // preventing the default reload from the user's side
