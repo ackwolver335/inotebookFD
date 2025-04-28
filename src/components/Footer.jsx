@@ -16,8 +16,8 @@ export default function Footer() {
 
       {/* Adding the same list here regarding the navigation to different pages */}
       <ul className = "xsz:font-semibold xsz:space-x-2 2xl:space-x-4">
-        <NavLink to = "/home" className = "active:text-primary"> Home </NavLink>
-        <NavLink to = {`${localStorage.getItem('token') ? '/' : '/login'}`} className = "active:text-primary"> About </NavLink>
+        <NavLink to = "" className = "active:text-primary"> Home </NavLink>
+        <NavLink to = {`${localStorage.getItem('token') ? '/about' : '/login'}`} className = "active:text-primary"> About </NavLink>
       </ul>
 
     </div>
