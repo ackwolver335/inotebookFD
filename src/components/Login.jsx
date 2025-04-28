@@ -18,7 +18,7 @@ export default function Login() {
   let navigate = useNavigate();
 
   // specifying starting point
-  const host= process.env.VITE_REACT_BACKEND_URI;
+  const host = import.meta.env.VITE_REACT_BACKEND_URI;
 
   // onSubmition event for the Form
   const submitData = async (e) => {
