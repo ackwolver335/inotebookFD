@@ -46,7 +46,7 @@ export default function Navbar() {
   return (
     <nav className="z-10 flex backdrop-blur-sm justify-between fixed left-0 right-0 top-0 items-center xsz:px-4 xsz:py-2 xl:px-8 xl:py-2 bg-secondary/60 drop-shadow-lg rounded-b-xl">
       {/* Setting the image of the main logo */}
-      <NavLink to="/">
+      <NavLink to="/home">
         <img src={Logo} alt="Main Image Logo Here" className="xsz:w-20 sm:w-24 xl:w-[110px] 2xl:w-[120px]" />
       </NavLink>
 
@@ -56,8 +56,8 @@ export default function Navbar() {
         xsz:p-3 xsz:space-y-2 xsz:rounded-md xsz:right-2 xsz:translate-x-20 sm:translate-x-0 ease-in duration-200 2xl:space-x-7">
 
         {/* The main navlinks are here */}
-        <NavLink to="" className={`active:text-primary sm:hover:underline sm:hover:underline-offset-4 ${location.pathname === "" ? "text-primary" : ""}`}> Home </NavLink>
-        <NavLink to={`${localStorage.getItem('token') ? '/about' : '/login'}`} className={`active:text-primary sm:hover:underline sm:hover:underline-offset-4 ${location.pathname === "/" ? "text-primary" : ""}`}> About </NavLink>
+        <NavLink to="/home" className={`active:text-primary sm:hover:underline sm:hover:underline-offset-4 ${location.pathname === "/home" ? "text-primary" : ""}`}> Home </NavLink>
+        <NavLink to={`${localStorage.getItem('token') ? '/' : '/login'}`} className={`active:text-primary sm:hover:underline sm:hover:underline-offset-4 ${location.pathname === "/" ? "text-primary" : ""}`}> About </NavLink>
 
         {/* Bootstrap Icon regarding User's Account */}
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-person-badge sm:w-5 md:w-6 lg:w-7 xsz:hidden sm:block text-white active:text-primary cursor-pointer" viewBox="0 0 16 16" onClick={showAccount}>
@@ -86,7 +86,7 @@ export default function Navbar() {
         <ul className="userAccount fixed xsz:top-16 right-2 xsz:z-40 flex flex-col items-center font-poppins bg-secondary/70 xsz:p-3 xsz:space-y-2 text-white xsz:rounded-md xsz:translate-x-28 ease-linear duration-200 sm:top-20 lg:font-medium md:text-[17px] lg:text-[18px] xl:top-24">
 
           {/* Login Components & go through link */}
-          <NavLink to="/about" className="active:text-primary" onClick={handleLogout}> Logout </NavLink>
+          <NavLink to="/" className="active:text-primary" onClick={handleLogout}> Logout </NavLink>
 
         </ul>
 

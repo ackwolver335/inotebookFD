@@ -47,7 +47,7 @@ export default function Signup() {
       
       // saving the auth-token in our local storage
       localStorage.setItem('token',json.jwtToken);
-      navigate("/about");
+      navigate("/");
 
       // using showalert for showing the details of it
       showAlert("User Sign Up Successfully !","Success","Sign Up");

@@ -1,5 +1,4 @@
 import React from 'react'
-import FirstComp from './FirstComp'
 import AddNote from './AddNote'
 import YourNote from './YourNote'
 

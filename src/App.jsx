@@ -22,8 +22,8 @@ function App() {
 
           {/* Setting some more Routes for different pages */}
           <Routes>
-            <Route index path="" element={<Home />} />
-            <Route path='/about' element={<About />} />
+            <Route index path="/" element={<About />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
           </Routes>

@@ -48,7 +48,7 @@ export default function Login() {
       showAlert("User Logged Successfully !","Success","Login");
       
       // navigating to the main page.
-      navigate("/about");
+      navigate("/");
 
     } else {
       showAlert("Provided invalid Credentials !","Danger","Not Login");         // in case user have provided wrong credentials
